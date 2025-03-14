@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Sort & Build</title>
+    <link rel="stylesheet" href="ecosort.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="waste-area">
+            <div class="waste" id="waste1" draggable="true" data-type="plastic"><a  title="plastic bottle"><img src="https://www.freeiconspng.com/uploads/water-bottle-png-1.png" width="50" /></a></div>
+            <div class="waste" id="waste2" draggable="true" data-type="paper"><a  title="paper bag"><img src="https://www.freeiconspng.com/uploads/bag-png-0.png" width="50"  /></a></div>
+            <div class="waste" id="waste3" draggable="true" data-type="glass"><a  title="glass"><img src="https://www.freeiconspng.com/uploads/wine-glass-png-22.png" width="50"  /></a></div>
+            <div class="waste" id="waste4" draggable="true" data-type="organic"><a  title="banana"><img src="https://www.freeiconspng.com/uploads/banana-png-27.png" width="50"  /></a></div>
+            <div class="waste" id="waste5" draggable="true" data-type="plastic"><a  title="plastic toy"><img src="https://www.freeiconspng.com/uploads/toy-train-png-21.jpeg" width="50"  /></a></div>
+            <div class="waste" id="waste6" draggable="true" data-type="paper"><a  title="cardboard box"><img src="https://www.freeiconspng.com/uploads/box-package-empty-image-icon-12.png" width="50" /></a></div>
+            <div class="waste" id="waste7" draggable="true" data-type="glass"><a  title="broken light bulb"><img src="https://www.freeiconspng.com/uploads/broken-light-bulb-png-10.png" width="50"  /></a></div>
+            <div class="waste" id="waste8" draggable="true" data-type="organic"><a  title="strawberry"><img src="https://www.freeiconspng.com/uploads/strawberry-fruit-png-1.png" width="50"  /></a></div>
+            <div class="waste" id="waste9" draggable="true" data-type="plastic"><a  title="plastic cup"><img src="https://www.freeiconspng.com/uploads/coffee-icon-png-24.png" width="50" /></a></div>
+            <div class="waste" id="waste10" draggable="true" data-type="paper"><a  title="news paper"><img src="https://www.freeiconspng.com/uploads/newspaper-icon-36.png" width="50"  /></a></div>
+            <div class="waste" id="waste11" draggable="true" data-type="glass"><a  title="wine bottle"><img src="https://www.freeiconspng.com/uploads/wine-icon-19.gif" width="50" /></a></div>
+            <div class="waste" id="waste12" draggable="true" data-type="organic"><a  title="orange peel"><img src="https://www.freeiconspng.com/uploads/vegetable-icon-png-15.png" width="50" /></a></div>
+            <div class="waste" id="waste13" draggable="true" data-type="plastic"><a  title="plastic ruler"><img src="https://www.freeiconspng.com/uploads/ruler-png-24.png" width="50" /></a></div>
+            <div class="waste" id="waste14" draggable="true" data-type="paper"><a  title="books"><img src="https://www.freeiconspng.com/uploads/-icons-smart-objects-3d-book-mockup-psd-address-book-icon-psd-preview-5.png" width="50"/></a></div>
+            
+        </div>
+        <div class="bins-area">
+            <div class="bin" id="plastic-bin" data-type="plastic">Plastic Bin</div>
+            <div class="bin" id="paper-bin" data-type="paper">Paper Bin</div>
+            <div class="bin" id="glass-bin" data-type="glass">Glass Bin</div>
+            <div class="bin" id="organic-bin" data-type="organic">Organic Bin</div>
+        </div>
+        <div class="build-area">
+            <button id="build-button" disabled>Build Sustainable Structure</button>
+            <div id="build-result"></div>
+        </div>
+        <div id="message"></div>
+    </div>
+    <script src="ecosort.js"></script>
+</body>
+</html>

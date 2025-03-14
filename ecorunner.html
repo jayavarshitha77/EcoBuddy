@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Runner Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #e8f5e9, #a5d6a7);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+            padding-bottom: 50px; /* Extra space at the bottom */
+        }
+        .game-area {
+            width: 400px;
+            height: 400px;
+            background-color: #ffffff;
+            margin: auto;
+            position: relative;
+            border-radius: 10px;
+            border: 3px solid #2e7d32;
+            overflow: hidden;
+        }
+        .runner {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 10px;
+            left: 175px;
+            font-size: 30px;
+            transition: left 0.1s;
+        }
+        .trash {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            font-size: 30px;
+        }
+        .score, .timer, .level {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #1b5e20;
+        }
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d32f2f;
+            margin-top: 20px;
+        }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: none;
+        }
+        .popup button {
+            margin: 10px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .start-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .start-btn, .home-btn, .play-again-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .start-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .start-btn:hover {
+            background-color: #388E3C;
+        }
+        .home-btn {
+            background-color: #1b5e20;
+            color: white;
+            text-decoration: none;
+        }
+        .home-btn:hover {
+            background-color: #388E3C;
+        }
+        .play-again-btn {
+            background-color: #FF9800;
+            color: white;
+            margin-top: 20px;
+            display: none; /* Initially hidden */
+        }
+        .play-again-btn:hover {
+            background-color: #F57C00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #1b5e20;">🌱 Eco Runner Game 🏃</h1>
+        <p>Move the runner left and right to collect trash and clean the environment! ♻</p>
+        
+        <div class="start-container">
+            <button class="start-btn" onclick="startGame()">Start Game</button>
+            <a href="main.html" class="home-btn">🏠 Home</a>
+        </div>
+
+        <div class="game-area" id="game-area">
+            <div class="runner" id="runner">🏃</div>
+        </div>
+
+        <p class="timer">⏳ Time Left: <span id="timer">30</span> sec</p>
+        <p class="score">🏆 Score: <span id="score">0</span></p>
+        <p class="level">🌟 Level: <span id="level">1</span></p>
+        <p class="highscore">🥇 High Score: <span id="highscore">0</span></p>
+        <p class="message" id="message"></p>
+
+        <!-- Play Again Button -->
+        <button class="play-again-btn" id="play-again-btn" onclick="startGame()">🔄 Play Again</button>
+    </div>
+    
+    <div class="popup" id="popup">
+        <h2>Game Over!</h2>
+        <p>Your Score: <span id="final-score"></span></p>
+        <button onclick="startGame()">Play Again</button>
+        <button onclick="closeGame()">Exit</button>
+    </div>
+    
+    <script>
+        let score = 0;
+        let timeLeft = 30;
+        let level = 1;
+        let highScore = localStorage.getItem("highscore") || 0;
+        let gameActive = false;
+        let gameInterval, timerInterval;
+        const gameArea = document.getElementById("game-area");
+        const runner = document.getElementById("runner");
+        const scoreDisplay = document.getElementById("score");
+        const timerDisplay = document.getElementById("timer");
+        const levelDisplay = document.getElementById("level");
+        const highscoreDisplay = document.getElementById("highscore");
+        const messageDisplay = document.getElementById("message");
+        const popup = document.getElementById("popup");
+        const finalScore = document.getElementById("final-score");
+        const playAgainBtn = document.getElementById("play-again-btn");
+        const trashIcons = {"🗑": 1, "🍶": 2, "🛢": 3, "🚯": 4, "📄": 5, "🍌": 2};
+        let runnerPosition = 175;
+
+        highscoreDisplay.innerText = highScore;
+
+        document.addEventListener("keydown", function(event) {
+            if (!gameActive) return;
+            if (event.key === "ArrowLeft" && runnerPosition > 10) {
+                runnerPosition -= 30;
+            } else if (event.key === "ArrowRight" && runnerPosition < 340) {
+                runnerPosition += 30;
+            }
+            runner.style.left = runnerPosition + "px";
+        });
+
+        function spawnTrash() {
+            if (!gameActive) return;
+            const trash = document.createElement("div");
+            let trashType = Object.keys(trashIcons)[Math.floor(Math.random() * Object.keys(trashIcons).length)];
+            trash.innerHTML = trashType;
+            trash.classList.add("trash");
+            trash.style.left = Math.random() * 350 + "px";
+            gameArea.appendChild(trash);
+            moveTrash(trash, trashIcons[trashType]);
+        }
+
+        function moveTrash(trash, points) {
+            let fallSpeed = 2 + level;
+            let fallInterval = setInterval(() => {
+                let trashTop = parseInt(trash.style.top || 0);
+                trash.style.top = trashTop + fallSpeed + "px";
+                if (trashTop > 350) {
+                    let trashLeft = parseInt(trash.style.left);
+                    if (Math.abs(trashLeft - runnerPosition) < 40) {
+                        score += points;
+                        scoreDisplay.innerText = score;
+                    }
+                    trash.remove();
+                    clearInterval(fallInterval);
+                    spawnTrash();
+                }
+            }, 30);
+        }
+
+        function startGame() {
+            popup.style.display = "none";
+            playAgainBtn.style.display = "block";
+            score = 0;
+            timeLeft = 30;
+            gameActive = true;
+            scoreDisplay.innerText = score;
+            timerDisplay.innerText = timeLeft;
+            gameArea.innerHTML = "";
+            gameArea.appendChild(runner);
+            runner.style.left = "175px";
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                timerDisplay.innerText = timeLeft;
+                if (timeLeft <= 0) {
+                    endGame();
+                }
+            }, 1000);
+            for (let i = 0; i < 3; i++) {
+                spawnTrash();
+            }
+        }
+
+        function endGame() {
+            gameActive = false;
+            clearInterval(timerInterval);
+            finalScore.innerText = score;
+            popup.style.display = "block";
+        }
+
+        function closeGame() {
+            popup.style.display = "none";
+        }
+    </script>
+</body>
+</html>

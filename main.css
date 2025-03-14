@@ -1,0 +1,169 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #265e29;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li:hover > a {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f8f8f8;
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    z-index: 10;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+.dropdown li a {
+    padding: 10px 20px;
+}
+
+.dropdown li a:hover {
+    background-color: #e0e0e0;
+}
+
+.hero {
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/06/Nature-Wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 180px 0;
+    color: rgb(255, 255, 255);
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #2e7d32;
+    color: rgb(255, 255, 255);
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #226026;
+}
+
+.features {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.button-link {
+    display: inline-block; /* Allows setting width and height */
+    padding: 10px 20px;
+    text-decoration: none; /* Removes underline */
+    background-color: #1b1f1b; /* Example background color */
+    color: rgb(254, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button-link:hover {
+    background-color: #3e8e41; /* Slightly darker on hover */
+  }
+.features .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    width: 320px;
+    margin: 30px;
+    padding: 40px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+}
+
+.feature-card img {
+    width: 200px;
+    margin-bottom: 25px;
+}
+
+.feature-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.feature-card p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #5c7b58;
+    padding: 30px 0;
+    text-align: center;
+}

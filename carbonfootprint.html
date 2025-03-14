@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="carbonfootprint.css">
+</head>
+<body>
+    <div class="container">
+        <h1></a> Carbon Footprint Calculator <a href="https://www.freeiconspng.com/img/4188" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/recycle-icon-0.png" width="80" alt="Download Recycle Vectors Icon Free" /></a></h1>
+        <p>Estimate your daily CO₂ emissions based on your lifestyle.</p>
+
+        <form id="carbonForm">
+            <label for="user"><a href="https://www.freeiconspng.com/img/25500" title="user"><img src="https://www.freeiconspng.com/uploads/account-profile-user-icon-9.png" width="50" alt="Account, profile, user icon" /></a> Your Name:</label>
+            <input type="text" id="user" required>
+
+            <label for="electricity"><a href="https://www.freeiconspng.com/img/4565" title="electricity"><img src="https://www.freeiconspng.com/uploads/electricity-icon--28.png" width="50" alt="Electricity icon " /></a>Electricity Usage (kWh/day):</label>
+            <input type="number" id="electricity" min="0" step="0.1" required>
+
+            <label for="gas"><a href="https://www.freeiconspng.com/img/14372" title="gas"><img src="https://www.freeiconspng.com/uploads/energy-fuel-gas-gasoline-oil-petrol-icon-png-10.png" width="50" alt="energy, fuel, gas, gasoline, oil, petrol icon png" /></a> Gas Usage (liters/day):</label>
+            <input type="number" id="gas" min="0" step="0.1" required>
+
+            <label for="miles"><a href="https://www.freeiconspng.com/img/45306" title="miles"><img src="https://www.freeiconspng.com/uploads/audi-a4-car-png-image-black-side-view-8.png" width="50" alt="Audi A4 Car PNG image black side view" /></a> Miles Driven (miles/day):</label>
+            <input type="number" id="miles" min="0" step="0.1" required>
+
+            <label for="flights"> <a href="https://www.freeiconspng.com/img/2519" title="plane"><img src="https://www.freeiconspng.com/uploads/plane-icon-free-search-download-as-png-ico-and-icns-iconseekerm-31.png" width="50" alt="Plane icon free search download as png, ico and icns, IconSeekerm" /></a>Flights per Year:</label>
+            <input type="number" id="flights" min="0" step="1" required>
+
+            <button type="submit" class="calculate-button">Calculate</button>
+        </form>
+
+        <div id="result" class="result-container">Your Carbon Footprint: -- kg CO₂/day</div>
+        <div class="animation-container">
+            <a href="https://www.freeiconspng.com/img/7080" title="leaf"><img src="https://www.freeiconspng.com/uploads/leaf-icon-png-33.png" width="350" alt="Leaf Drawing Vector"  class ="leaf leaf1"/></a>
+            <a href="https://www.freeiconspng.com/img/7080" title="leaf"><img src="https://www.freeiconspng.com/uploads/leaf-icon-png-33.png" width="350" alt="Leaf Drawing Vector"  class ="leaf leaf2"/></a>
+            <a href="https://www.freeiconspng.com/img/7080" title="leaf"><img src="https://www.freeiconspng.com/uploads/leaf-icon-png-33.png" width="350" alt="Leaf Drawing Vector"  class ="leaf leaf3"/></a>
+            <a href="https://www.freeiconspng.com/img/7080" title="leaf"><img src="https://www.freeiconspng.com/uploads/leaf-icon-png-33.png" width="350" alt="Leaf Drawing Vector"  class ="leaf leaf4"/></a>
+            <a href="https://www.freeiconspng.com/img/7080" title="leaf"><img src="https://www.freeiconspng.com/uploads/leaf-icon-png-33.png" width="350" alt="Leaf Drawing Vector"  class ="leaf leaf5"/></a>
+        </div>
+    </div>
+
+    <script src="carbonfootprint.js"></script>
+           
+</body>
+</html>

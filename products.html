@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+        }
+        .sidebar {
+            width: 250px;
+            background: #e8f0e8;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .sidebar h2 {
+            color: #6a8f6b;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li {
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .active {
+            background: #d2e4d3;
+            border-radius: 5px;
+        }
+        main {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .categories button {
+            margin: 5px;
+            padding: 10px;
+            border: none;
+            background: #e0e0e0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+        .product {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .product p {
+            font-weight: bold;
+        }
+        .product span {
+            color: grey;
+            font-size: 14px;
+        }
+        .sidebar ul li:hover {
+            background: #c5d8c6;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>EcoBuddy</h2>
+        <nav>
+            <ul>
+                <li><i class="fas fa-home"></i><a href="main.html">Home</a></li>
+                <li><i class="fas fa-store"></i> Marketplace</li>
+                <li><i class="fas fa-search"></i> Explore</li>
+                <li><i class="fas fa-lightbulb"></i> Inspire</li>
+                <li><i class="fas fa-users"></i> Community</li>
+                <li><i class="fas fa-user"></i> My Profile</li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <h1>Shop by Category</h1>
+        <div class="categories">
+            <button>Zero Waste</button>
+            <button>Organic</button>
+            <button>Recycled Materials</button>
+            <button>Plastic Free</button>
+            <button>Fair Trade</button>
+            <button>Carbon Neutral</button>
+            <button>Cruelty Free</button>
+        </div>
+        <h2>Sustainable Products</h2>
+        <div class="products">
+            <div class="product">
+                <img src="reuse.jpeg" alt="Reusable Water Bottles">
+                <p>Reusable Water Bottles</p>
+                <span>$20 - $50 · 1,500 products</span>
+            </div>
+            <div class="product">
+                <img src="shoes.jpeg" alt="Eco-Friendly Shoes">
+                <p>Eco-Friendly Shoes</p>
+                <span>$50 - $100 · 2,300 products</span>
+            </div>
+            <div class="product">
+                <img src="tshirt.webp" alt="Organic Cotton T-Shirts">
+                <p>Organic Cotton T-Shirts</p>
+                <span>$10 - $30 · 1,000 products</span>
+            </div>
+            <div class="product">
+                <img src="kitchen.jpeg" alt="Zero-Waste Kitchen Essentials">
+                <p>Zero-Waste Kitchen Essentials</p>
+                <span>$5 - $25 · 800 products</span>
+            </div>
+            <div class="product">
+                <img src="bags.jpeg" alt="Recycled Plastic Bags">
+                <p>Recycled Plastic Bags</p>
+                <span>$15 - $40 · 1,200 products</span>
+            </div>
+            <div class="product">
+                <img src="skincare.jpg" alt="Sustainable Skincare">
+                <p>Sustainable Skincare</p>
+                <span>$20 - $60 · 1,800 products</span>
+            </div>
+            <div class="product">
+                <img src="beens.jpeg" alt="Fair Trade Coffee Beans">
+                <p>Fair Trade Coffee Beans</p>
+                <span>$8 - $20 · 1,100 products</span>
+            </div>
+            <div class="product">
+                <img src="straw.jpg" alt="Reusable Straws">
+                <p>Reusable Straws</p>
+                <span>$5 - $15 · 900 products</span>
+            </div>
+            <div class="product">
+                <img src="data:image/jpeg;base64,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" alt="Upcycled Home Decor">
+                <p>Upcycled Home Decor</p>
+                <span>$30 - $80 · 1,600 products</span>
+            </div>
+            <div class="product">
+                <img src="brush.jpeg" alt="Bamboo Toothbrushes">
+                <p>Bamboo Toothbrushes</p>
+                <span>$10 - $25 · 1,000 products</span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

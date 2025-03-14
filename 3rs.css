@@ -1,0 +1,131 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f400;
+    color: #635151;
+    background-image: url('https://th.bing.com/th/id/R.3cae2d778bce92f366249e3584f206b5?rik=oZtp3qslCVv4Rg&riu=http%3a%2f%2f1.bp.blogspot.com%2f-nPaXHEHZZFY%2fTb2kveykf3I%2fAAAAAAAAAeA%2f3bcn4rpjNhY%2fs1600%2fnature_wallpaper7.jpg&ehk=oE9Z4YQls4bZlKSoZt%2fV5aZWJLKUZIFgdaI4p6VpmNE%3d&risl=&pid=ImgRaw&r=0');
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-blend-mode: overlay; /* Allows blend modes to work*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://th.bing.com/th/id/R.3cae2d778bce92f366249e3584f206b5?rik=oZtp3qslCVv4Rg&riu=http%3a%2f%2f1.bp.blogspot.com%2f-nPaXHEHZZFY%2fTb2kveykf3I%2fAAAAAAAAAeA%2f3bcn4rpjNhY%2fs1600%2fnature_wallpaper7.jpg&ehk=oE9Z4YQls4bZlKSoZt%2fV5aZWJLKUZIFgdaI4p6VpmNE%3d&risl=&pid=ImgRaw&r=0');
+}
+
+
+header {
+    background-color: #4caf4f0d; /* Green */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.tip-section {
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.tip-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.tip-image {
+    max-width: 200px;
+    margin: 20px 0;
+    border-radius: 50%;
+}
+
+.h2 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.animation-element {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #8BC34A; /* Light Green */
+    opacity: 0.5;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Color variations for each section */
+.reduce {
+    background-color: #cff6d5; 
+    background-image: url('https://www.actikem.com/wp-content/uploads/2023/04/reduce-reuse-recycle.png');/* Light Green */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-blend-mode: overlay; /* Allows blend modes to work*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(247, 243, 243)), url('https://www.actikem.com/wp-content/uploads/2023/04/reduce-reuse-recycle.png');
+}
+
+
+
+.reuse {
+    background-color: #cff6d5; /* Light Orange */
+    background-image: url('https://www.actikem.com/wp-content/uploads/2023/04/reduce-reuse-recycle.png');/* Light Green */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-blend-mode: overlay; /* Allows blend modes to work*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(247, 243, 243)), url('https://www.actikem.com/wp-content/uploads/2023/04/reduce-reuse-recycle.png');
+}
+
+.recycle {
+    background-color: #cff6d5; /* Light Blue */
+    background-image: url('https://www.actikem.com/wp-content/uploads/2023/04/reduce-reuse-recycle.png');/* Light Green */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-blend-mode: overlay; /* Allows blend modes to work*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(247, 243, 243)), url('https://www.actikem.com/wp-content/uploads/2023/04/reduce-reuse-recycle.png');
+}
+
+.reduce h2{
+    color: #43A047;
+}
+
+.reuse h2{
+    color: #FF9800;
+}
+
+.recycle h2{
+    color: #03A9F4;
+}

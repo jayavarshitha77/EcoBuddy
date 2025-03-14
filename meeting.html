@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting - Eco-Friendly Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #F5F8F3;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .meeting-container {
+            margin-top: 50px;
+            padding: 40px;
+            background: rgb(131, 244, 113);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .meeting-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 20px;
+            font-size: 18px;
+            color: white;
+            background: #2E4929;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            width: 80%;
+            transition: background 0.3s ease;
+        }
+        .meeting-btn:hover {
+            background: #1E341B;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="main.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+        <h2>Eco-Friendly Hub - Meetings</h2>
+    </div>
+    <div class="meeting-container">
+        <h1><i class="fas fa-video"></i> Start or Join a Meeting</h1>
+        <p>Connect with your team and discuss sustainable solutions.</p>
+        <a href="https://www.zoom.us/signin#/login" class="meeting-btn"><i class="fas fa-plus-circle"></i> Create a Meeting</a>
+        <a href="https://app.zoom.us/wc/join" class="meeting-btn"><i class="fas fa-sign-in-alt"></i> Join a Meeting</a>
+    </div>
+</body>
+</html>
